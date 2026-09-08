@@ -1,0 +1,11 @@
+{
+        "firstname": "Static JSON FIle",
+        "lastname": "Automation",
+        "totalprice": 3000,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-08-25",
+            "checkout": "2026-08-28"
+        },
+        "additionalneeds": "Dinner Required"
+}
