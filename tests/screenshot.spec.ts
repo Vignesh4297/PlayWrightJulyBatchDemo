@@ -7,19 +7,23 @@ const browser: Browser = await chromium.launch({headless: false, channel: 'chrom
 const page: Page = await browser.newPage();
 await page.goto("https://www.youtube.com/");
 
-// await page.locator(".ytSearchboxComponentInput yt-searchbox-input title").fill("Playwright");
-// await page.locator(".ytSearchboxComponentSearchButton").click();
+await page.waitForTimeout(5000);
+
+await page.locator(".ytSearchboxComponentInput yt-searchbox-input title").fill("Playwright");
+await page.locator(".ytSearchboxComponentSearchButton").click();
 
 
 await page.waitForTimeout(5000);
 
 
 //element screenshot
-//await page.locator("//span[text()='AI Mode']//parent::div").screenshot({path: "elementSS.png"});
+await page.locator("//span[text()='AI Mode']//parent::div").screenshot({path: "elementSS.png"});
 
 //page Screenshot
-await page.screenshot({path: "pageSS.png"});
+await page.screenshot({path: "../screenshots/pageSS.png"});
 
-await page.screenshot({path: "fullPageSS.png", fullPage: true});
+//Full Page Screenshot
+
+await page.screenshot({path: "../screenshots/fullPageSS.png", fullPage: true});
     
 });
